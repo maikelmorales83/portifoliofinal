@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <script src="https://kit.fontawesome.com/a76347d30e.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>  
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body  id="topo">
+  <header id="header">
+      <a href="#" class="logo">Maikel Rafael Morales Aires</a>
+      <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li ><a href="#teste">Sobre</a></li>          
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="portfolio/RSTI_card/index.html" target="_blank">Trabalho RSTI Card</a></li>
+          <li><a href="portfolio/siteSERIADO/index.html" target="_blank">Site Seriado</a></li>
+          <li><a href="/portfolio/Trabalho_final_web/index.html" target="_blank">Site Curso ONLINE</a></li>
+      </ul>
+  </header>
+  
+  <Section>
+
+        
+
+      <h2 id="text"><span></span><br>Portifólio</h2>
+      
+      <img src="https://user-images.githubusercontent.com/65358991/170092504-132fa547-5ced-40e5-ab64-ded61518fac2.png" id="bird1">
+      <img src="https://user-images.githubusercontent.com/65358991/170092542-9747edcc-fb51-4e21-aaf5-a61119393618.png" id="bird2">
+      <img src="https://user-images.githubusercontent.com/65358991/170092559-883fe071-eb4f-4610-8c8b-a037d061c617.png" id="forest">      
+      <img src="https://user-images.githubusercontent.com/65358991/170092605-eada6510-d556-45cc-b7fa-9e4d1d258d26.png" id="rocks">
+      <img src="https://user-images.githubusercontent.com/65358991/170092616-5a70c4af-2eed-496f-bde9-b5fcc7142a31.png" id="water">
+  </Section>
+  
+  <div class="sec ">
+      <h2 id="teste">Sobre mim</h2>
+      <p>Meu nome é Maikel Rafael Morales Aires, fiz 2 semestres do curso de Sistemas de Informações na UFN -Santa Maria -RS , tenho Graduação em Gestão de Tecnologia da Informação pela Faculdade UniCesumar Maringá - PR , Técnico em Informática pela Escola Técnica CS-Computadores, possuo curso de Programação Web pelo Estado de Santa Catarina e tenho curso de Reparador de Circuítos eletronicos pelo Instituto Federal Farroupilha de São Vicente -RS tenho experiência em montagem e manutenção de computadores e componentes eletrônicos, fiz parte do projeto e desenvolvimento  do simulador de Auto escola fabricado pela Rota Simuladores, crie o setor de Ti da empresa desenvolvendo o trabalho por 6 anos, criei manuais tecnicos e de intruçoes, ministrei curso de operação e montagem de simuladores ao Detran - MT, diretores e instrutores de Auto Escolas.</p>
+      <br><br>
+      <h2 id="contato">Contato</h2>
+      <p>Telefone: (55) 99161-5984<br>
+         Email: maikelmorales83@gmail.com
+      </p>
+  </div>
+
+    
+  
+  <footer>
+      <p style="color: white; ">Forest Graphics Edition by Rafa Morales Aires &copy; Santa Maria - RS <a href="#topo"><i  class="fa-solid fa-arrow-up subir fa-3x" > </i></a></p>
+     
+  </footer>
+  
+  <script>
+      let text = document.getElementById('text');
+      let bird1 = document.getElementById('bird1');
+      let bird2 = document.getElementById('bird2');
+      let btn = document.getElementById('btn');
+      let rocks = document.getElementById('rocks');
+      let forest = document.getElementById('forest');
+      let water = document.getElementById('water');
+      let header = document.getElementById('header');
+      
+      window.addEventListener('scroll', function() {
+          let value = window.scrollY;
+          
+          text.style.top = 50 + value * -.1 + '%';
+          bird2.style.top = value * -1.5 + 'px';
+          bird2.style.left = value * 2 + 'px';
+          bird1.style.top = value * -1.5 + 'px';
+          bird1.style.left = value * -5 + 'px';
+          btn.style.marginTop = value * 1.5 + 'px';
+          rocks.style.top = value * -.12 + 'px';
+          forest.style.top = value * .25 + 'px';
+          header.style.top = value * .5 + 'px';
+      })
+  </script>  
+</body>
+</html>

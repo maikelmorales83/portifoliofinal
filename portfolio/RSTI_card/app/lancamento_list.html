@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Icon Fontwesome link -->
+    <script src="https://kit.fontawesome.com/33fed28b96.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <title>App Lançamento / Listar / RSTI CARD - Aplicativo para Gestão Pessoais </title>
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar-nav ">
+            <nav class="navbar navbar-expand-lg div_cor">
+                <a class="navbar-brand text-white" href="principal.html">
+                    <i class="fa-solid fa-sack-dollar"></i> RSTI CARD
+                </a>
+                <button class=" navbar-light dark navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Alterna navegação">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-item text-white nav-link active" href="principal.html"><i
+                                class="fa-solid fa-gauge"></i> Princípal<span class="sr-only">(Página atual)</span></a>
+                        <a class="nav-item  text-white nav-link active" href="carteira_list.html"><i
+                                class="fa-solid fa-wallet"></i> Carteiras</a>
+                        <a class="nav-item  text-white nav-link active" href="lancamento_list.html"><i
+                                class="fa-solid fa-money-check-dollar"></i> Lançamentos</a>
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a href="#" class="nav-item nav-link active">
+                            <i class=" user-botao fa-solid fa-user text-white"> User</i>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="mb-5">
+        <div class="container-fluid ">
+            <section class="mt-4">
+                <div class="card">
+                    <!--card tem  3 pedacinhos-->
+                    <div class="card-body div_cor">
+                        <form>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-3">
+                                    <h2 class="text-white">
+                                        <i class="fa-solid fa-money-check-dollar text-info "></i>
+                                        Lançamentos
+                                    </h2>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-3 form-group">
+                                    <input type="text" class="form-control" name="busca" placeholder=" Buscar...">
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 mt-3 form-group">
+                                    <button type="submit" class="btn btn-outline-info w-100">
+                                        <i class="fa-solid fa-search"> Buscar</i>
+                                    </button>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2 mt-3 form-group">
+                                    <a href="lancamento_form.html" type="submit" class="btn btn-success w-100">
+                                        <i class="fa-solid fa-save"> Cadastrar</i>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-4">
+                <div class="card">
+                    <div class="card-body div_cor">
+                        <!-- Modal -->
+                        <!-- alt+shift+f CENTRALIZAR O TEXTO DO CODIGO-->
+                        <div class="modal fade" id="modalDeletar" tabindex="-1" role="dialog"
+                            aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="TituloModalCentralizado">Exclusão</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Você tem certeza que deseja apagar a carteira?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Não</button>
+                                        <!--DATA-DISMISS ELE FECHA O MODAL-->
+                                        <a href="lancamento_list.html" class="btn btn-danger">Sim</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-white ">
+                                    <tr>
+                                        <th class="text-center">Tipo</th>
+                                        <th>Data</th>
+                                        <th>Motivo</th>
+                                        <th>Carteira</th>
+                                        <th class="text-right">Valor</th>
+                                        <th class="text-center">Detalhes</th>
+                                        <th class="text-center">Alterar</th>
+                                        <th class="text-center">Apagar</th>
+                                    </tr>
+                                    
+                                </thead>
+                                <tbody class="text-white">
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa-solid fa-circle-plus text-success"></i></td>                                        
+                                        <td>10/07/2022</td>
+                                        <td>Recebimento Salário</td>
+                                        <td>Banco do Brasil</td>
+                                        <td class="text-right">R$ 3.000,00</td>
+                                        <td class="text-center">
+                                            <a href="lancamento_detail.html" class="btn btn-outline-primary">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="lancamento_form.html" class="btn btn-outline-success">
+                                                <i class="fa-solid fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="#" data-toggle="modal" data-target="#modalDeletar"
+                                                class="btn btn-outline-danger">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa-solid fa-circle-plus text-success"></i></td>                                        
+                                        <td>29/07/2022</td>
+                                        <td>Recebimento de Cliente</td>
+                                        <td>Carteira</td>
+                                        <td class="text-right">R$ 60,00</td>
+                                        <td class="text-center">
+                                            <a href="lancamento_detail.html" class="btn btn-outline-primary">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="lancamento_form.html" class="btn btn-outline-success">
+                                                <i class="fa-solid fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="#" data-toggle="modal" data-target="#modalDeletar"
+                                                class="btn btn-outline-danger">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa-solid fa-circle-minus text-danger"></i></td>                                        
+                                        <td>13/07/2022</td>
+                                        <td>Pagamento Fornecedor </td>
+                                        <td>Banco do Brasil</td>
+                                        <td class="text-right">R$ 30,00</td>
+                                        <td class="text-center">
+                                            <a href="lancamento_detail.html" class="btn btn-outline-primary">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="lancamento_form.html" class="btn btn-outline-success">
+                                                <i class="fa-solid fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="#" data-toggle="modal" data-target="#modalDeletar"
+                                                class="btn btn-outline-danger">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa-solid fa-circle-plus text-success"></i></td>                                        
+                                        <td>20/07/2022</td>
+                                        <td>Recebimento Salário</td>
+                                        <td>Nubank</td>
+                                        <td class="text-right">R$ 3.000,00</td>
+                                        <td class="text-center">
+                                            <a href="lancamento_detail.html" class="btn btn-outline-primary">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="lancamento_form.html" class="btn btn-outline-success">
+                                                <i class="fa-solid fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="#" data-toggle="modal" data-target="#modalDeletar"
+                                                class="btn btn-outline-danger">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <i class="fa-solid fa-circle-minus text-danger"></i></td>                                        
+                                        <td>10/07/2022</td>
+                                        <td>Aquisicão de Celular</td>
+                                        <td>Nubank</td>
+                                        <td class="text-right">R$ 3.000,00</td>
+                                        <td class="text-center">
+                                            <a href="lancamento_detail.html" class="btn btn-outline-primary">
+                                                <i class="fa-solid fa-circle-info"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="lancamento_form.html" class="btn btn-outline-success">
+                                                <i class="fa-solid fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="#" data-toggle="modal" data-target="#modalDeletar"
+                                                class="btn btn-outline-danger">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </a>
+                                        </td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="mt-4 bg-light text-center div_cor text-white fixed-bottom">
+        <p>Desenvolvido por Rafa Morales-&copy; 2022 -RSTI</p>
+    </footer>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
